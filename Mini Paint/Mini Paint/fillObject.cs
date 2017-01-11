@@ -9,5 +9,10 @@ namespace Mini_Paint
     class fillObject
     {
         mathMethod mm = new mathMethod();
+
+        public void BoundaryFill()
+        {
+
+        }
     }
 }
