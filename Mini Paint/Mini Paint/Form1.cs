@@ -16,6 +16,7 @@ namespace Mini_Paint
         DrawLine dl = new DrawLine();
         DrawCircle dc = new DrawCircle();
         DrawNGon dg = new DrawNGon();
+        DrawTransformation dw = new DrawTransformation();
 
         private Point p0, p1;
         private Bitmap drawArea;
@@ -157,7 +158,13 @@ namespace Mini_Paint
 
         private void Transformasi()
         {
+            if(rbtTranslasi.Checked == true)
+            {
+                dXd.Enabled = true;
+                dYd.Enabled = true;
 
+                dw.Translasi(p0, p1, g, ToInt32(dXd.Text), ToInt32(dYd.Text));
+            }
         }
     }
 }

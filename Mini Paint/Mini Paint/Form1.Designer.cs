@@ -49,7 +49,6 @@
             this.rbtStar = new System.Windows.Forms.RadioButton();
             this.btnClear = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label6 = new System.Windows.Forms.Label();
             this.dXd = new System.Windows.Forms.TextBox();
             this.dYd = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -57,6 +56,7 @@
             this.btnTransform = new System.Windows.Forms.Button();
             this.rbtDilatasi = new System.Windows.Forms.RadioButton();
             this.rbtRefleksi = new System.Windows.Forms.RadioButton();
+            this.rbtTranslasi = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPaint)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudNGon)).BeginInit();
@@ -276,6 +276,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.rbtTranslasi);
             this.groupBox2.Controls.Add(this.rbtRefleksi);
             this.groupBox2.Controls.Add(this.rbtDilatasi);
             this.groupBox2.Controls.Add(this.btnTransform);
@@ -283,22 +284,12 @@
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.dYd);
             this.groupBox2.Controls.Add(this.dXd);
-            this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Location = new System.Drawing.Point(334, 14);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(632, 137);
             this.groupBox2.TabIndex = 28;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Transformasi Objek";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(7, 22);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(66, 17);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "Translasi";
             // 
             // dXd
             // 
@@ -363,6 +354,17 @@
             this.rbtRefleksi.Text = "Refleksi";
             this.rbtRefleksi.UseVisualStyleBackColor = true;
             // 
+            // rbtTranslasi
+            // 
+            this.rbtTranslasi.AutoSize = true;
+            this.rbtTranslasi.Location = new System.Drawing.Point(11, 20);
+            this.rbtTranslasi.Name = "rbtTranslasi";
+            this.rbtTranslasi.Size = new System.Drawing.Size(87, 21);
+            this.rbtTranslasi.TabIndex = 8;
+            this.rbtTranslasi.TabStop = true;
+            this.rbtTranslasi.Text = "Translasi";
+            this.rbtTranslasi.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -422,10 +424,10 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox dYd;
         private System.Windows.Forms.TextBox dXd;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnTransform;
         private System.Windows.Forms.RadioButton rbtRefleksi;
         private System.Windows.Forms.RadioButton rbtDilatasi;
+        private System.Windows.Forms.RadioButton rbtTranslasi;
     }
 }
 
