@@ -14,7 +14,6 @@ namespace Mini_Paint
         public void Dilatasi(Point p0,Point p1, Graphics g)
         {
 
-            
         }
         
         public Point Translasi(Point p0, Point p1, Graphics g, int dX, int dY)
@@ -23,7 +22,6 @@ namespace Mini_Paint
             pEnd.X = pEnd.X + dX;
             pEnd.Y = pEnd.Y + dY;
             return pEnd;
-            
         }
 
         public void Rotasi(Point p0, Point p1, Graphics g)

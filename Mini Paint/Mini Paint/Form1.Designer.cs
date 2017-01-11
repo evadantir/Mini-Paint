@@ -54,6 +54,9 @@
             this.dYd = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.btnTransform = new System.Windows.Forms.Button();
+            this.rbtDilatasi = new System.Windows.Forms.RadioButton();
+            this.rbtRefleksi = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPaint)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudNGon)).BeginInit();
@@ -273,6 +276,9 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.rbtRefleksi);
+            this.groupBox2.Controls.Add(this.rbtDilatasi);
+            this.groupBox2.Controls.Add(this.btnTransform);
             this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.dYd);
@@ -290,9 +296,9 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(7, 22);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(54, 17);
+            this.label6.Size = new System.Drawing.Size(66, 17);
             this.label6.TabIndex = 0;
-            this.label6.Text = "Dilatasi";
+            this.label6.Text = "Translasi";
             // 
             // dXd
             // 
@@ -325,6 +331,37 @@
             this.label8.Size = new System.Drawing.Size(24, 17);
             this.label8.TabIndex = 4;
             this.label8.Text = "Δy";
+            // 
+            // btnTransform
+            // 
+            this.btnTransform.Location = new System.Drawing.Point(510, 101);
+            this.btnTransform.Name = "btnTransform";
+            this.btnTransform.Size = new System.Drawing.Size(101, 23);
+            this.btnTransform.TabIndex = 5;
+            this.btnTransform.Text = "Transformasi";
+            this.btnTransform.UseVisualStyleBackColor = true;
+            // 
+            // rbtDilatasi
+            // 
+            this.rbtDilatasi.AutoSize = true;
+            this.rbtDilatasi.Location = new System.Drawing.Point(10, 85);
+            this.rbtDilatasi.Name = "rbtDilatasi";
+            this.rbtDilatasi.Size = new System.Drawing.Size(75, 21);
+            this.rbtDilatasi.TabIndex = 6;
+            this.rbtDilatasi.TabStop = true;
+            this.rbtDilatasi.Text = "Dilatasi";
+            this.rbtDilatasi.UseVisualStyleBackColor = true;
+            // 
+            // rbtRefleksi
+            // 
+            this.rbtRefleksi.AutoSize = true;
+            this.rbtRefleksi.Location = new System.Drawing.Point(10, 112);
+            this.rbtRefleksi.Name = "rbtRefleksi";
+            this.rbtRefleksi.Size = new System.Drawing.Size(79, 21);
+            this.rbtRefleksi.TabIndex = 7;
+            this.rbtRefleksi.TabStop = true;
+            this.rbtRefleksi.Text = "Refleksi";
+            this.rbtRefleksi.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -386,6 +423,9 @@
         private System.Windows.Forms.TextBox dYd;
         private System.Windows.Forms.TextBox dXd;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button btnTransform;
+        private System.Windows.Forms.RadioButton rbtRefleksi;
+        private System.Windows.Forms.RadioButton rbtDilatasi;
     }
 }
 

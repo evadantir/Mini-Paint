@@ -56,8 +56,6 @@ namespace Mini_Paint
         {
             x1.Text = Convert.ToString(e.Location.X);
             y1.Text = Convert.ToString(e.Location.Y);
-
-
         }
 
         private void pictureBoxPaint_MouseUp(object sender, MouseEventArgs e)
@@ -86,7 +84,6 @@ namespace Mini_Paint
                     _rb.Checked = false;
                 }
             }
-
         }
 
         private IEnumerable<Control> GetAll(Control control, Type type)
@@ -156,6 +153,11 @@ namespace Mini_Paint
             {
                 dg.DrawStar(p0, p1, g, n);
             }
+        }
+
+        private void Transformasi()
+        {
+
         }
     }
 }
