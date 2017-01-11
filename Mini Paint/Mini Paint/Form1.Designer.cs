@@ -43,12 +43,12 @@
             this.rbtCircle = new System.Windows.Forms.RadioButton();
             this.rbtEllipse = new System.Windows.Forms.RadioButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.nudNGon = new System.Windows.Forms.NumericUpDown();
             this.rbtPolygon = new System.Windows.Forms.RadioButton();
             this.rbtStar = new System.Windows.Forms.RadioButton();
             this.btnClear = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPaint)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudNGon)).BeginInit();
@@ -210,6 +210,16 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Pembuatan Objek";
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(6, 86);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(53, 17);
+            this.label6.TabIndex = 35;
+            this.label6.Text = "Matriks";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
+            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -265,16 +275,6 @@
             this.btnClear.UseVisualStyleBackColor = true;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(6, 86);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(53, 17);
-            this.label6.TabIndex = 35;
-            this.label6.Text = "Matriks";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -294,6 +294,7 @@
             this.Controls.Add(this.label1);
             this.Name = "Form1";
             this.Text = "Mini Paint";
+            this.Load += new System.EventHandler(this.Form1_Load_1);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseMove);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPaint)).EndInit();
             this.groupBox1.ResumeLayout(false);

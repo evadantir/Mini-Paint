@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Drawing;
 
 namespace Mini_Paint
 {
@@ -10,7 +11,7 @@ namespace Mini_Paint
     {
         mathMethod mm = new mathMethod();
 
-        public void BoundaryFill()
+        public void BoundaryFill(Point p0, Graphics g)
         {
 
         }

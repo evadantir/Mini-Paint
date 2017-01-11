@@ -25,6 +25,11 @@ namespace Mini_Paint
         {
 
         }
+
+        public void Refleksi()
+        {
+
+        }
     }
 
 
