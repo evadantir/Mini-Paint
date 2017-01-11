@@ -126,7 +126,7 @@ namespace Mini_Paint
         private void Draw()
         {
             int n = (int)nudNGon.Value;
-            if (rbtDDA.Checked && clicked == true)
+            if (rbtDDA.Checked && clicked == true && clicked == true)
             {
                 dl.DrawDDA(p0,p1,pen,g);
             }
@@ -156,14 +156,14 @@ namespace Mini_Paint
             }
         }
 
-        private void Transformasi()
+        private void btnTransform_Click(object sender, EventArgs e)
         {
             if(rbtTranslasi.Checked == true)
             {
-                dXd.Enabled = true;
-                dYd.Enabled = true;
+                //dXd.Enabled = true;
+                //dYd.Enabled = true;
 
-                Point pEnd = dw.Translasi(p0, p1, g, Convert.ToInt32(dXd.Text), Convert.ToInt32(dYd.Text));
+                Point pEnd = dw.Translasi(p0, p1,Convert.ToInt32(dXd.Text), Convert.ToInt32(dYd.Text));
                 int n = (int)nudNGon.Value;
                 if (rbtDDA.Checked && clicked == true)
                 {

@@ -16,9 +16,11 @@ namespace Mini_Paint
 
         }
         
-        public Point Translasi(Point p0, Point p1, Graphics g, int dX, int dY)
+        public Point Translasi(Point p0, Point p1, int dX, int dY)
         {
-            Point pEnd = p1;
+            Point pStart = p0,pEnd = p1;
+            pStart.X = pStart.X + dX;
+            pStart.Y = pStart.Y + dY;
             pEnd.X = pEnd.X + dX;
             pEnd.Y = pEnd.Y + dY;
             return pEnd;

@@ -331,6 +331,7 @@
             this.btnTransform.TabIndex = 5;
             this.btnTransform.Text = "Transformasi";
             this.btnTransform.UseVisualStyleBackColor = true;
+            this.btnTransform.Click += new System.EventHandler(this.btnTransform_Click);
             // 
             // rbtDilatasi
             // 
