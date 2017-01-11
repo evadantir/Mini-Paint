@@ -11,22 +11,27 @@ namespace Mini_Paint
     {
         mathMethod mm = new mathMethod();
 
-        public void Dilatasi()
+        public void Dilatasi(Point p0,Point p1, Graphics g)
         {
 
+            
         }
         
-        public void Translasi()
+        public Point Translasi(Point p0, Point p1, Graphics g, int dX, int dY)
+        {
+            Point pEnd = p1;
+            pEnd.X = pEnd.X + dX;
+            pEnd.Y = pEnd.Y + dY;
+            return pEnd;
+            
+        }
+
+        public void Rotasi(Point p0, Point p1, Graphics g)
         {
 
         }
 
-        public void Rotasi()
-        {
-
-        }
-
-        public void Refleksi()
+        public void Refleksi(Point p0, Point p1, Graphics g)
         {
 
         }

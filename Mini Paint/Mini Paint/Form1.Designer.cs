@@ -43,15 +43,21 @@
             this.rbtCircle = new System.Windows.Forms.RadioButton();
             this.rbtEllipse = new System.Windows.Forms.RadioButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.nudNGon = new System.Windows.Forms.NumericUpDown();
             this.rbtPolygon = new System.Windows.Forms.RadioButton();
             this.rbtStar = new System.Windows.Forms.RadioButton();
             this.btnClear = new System.Windows.Forms.Button();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.dXd = new System.Windows.Forms.TextBox();
+            this.dYd = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPaint)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudNGon)).BeginInit();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -91,9 +97,9 @@
             // pictureBoxPaint
             // 
             this.pictureBoxPaint.BackColor = System.Drawing.Color.White;
-            this.pictureBoxPaint.Location = new System.Drawing.Point(12, 219);
+            this.pictureBoxPaint.Location = new System.Drawing.Point(12, 157);
             this.pictureBoxPaint.Name = "pictureBoxPaint";
-            this.pictureBoxPaint.Size = new System.Drawing.Size(955, 426);
+            this.pictureBoxPaint.Size = new System.Drawing.Size(955, 488);
             this.pictureBoxPaint.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxPaint.TabIndex = 18;
             this.pictureBoxPaint.TabStop = false;
@@ -183,7 +189,7 @@
             // rbtEllipse
             // 
             this.rbtEllipse.AutoSize = true;
-            this.rbtEllipse.Location = new System.Drawing.Point(317, 23);
+            this.rbtEllipse.Location = new System.Drawing.Point(223, 75);
             this.rbtEllipse.Name = "rbtEllipse";
             this.rbtEllipse.Size = new System.Drawing.Size(70, 21);
             this.rbtEllipse.TabIndex = 24;
@@ -193,7 +199,6 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.nudNGon);
             this.groupBox1.Controls.Add(this.rbtEllipse);
@@ -205,25 +210,16 @@
             this.groupBox1.Controls.Add(this.rbtBresenham);
             this.groupBox1.Location = new System.Drawing.Point(12, 14);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(955, 189);
+            this.groupBox1.Size = new System.Drawing.Size(315, 137);
             this.groupBox1.TabIndex = 25;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Pembuatan Objek";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(6, 86);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(53, 17);
-            this.label6.TabIndex = 35;
-            this.label6.Text = "Matriks";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(386, 52);
+            this.label5.Location = new System.Drawing.Point(168, 104);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(49, 17);
             this.label5.TabIndex = 31;
@@ -231,7 +227,7 @@
             // 
             // nudNGon
             // 
-            this.nudNGon.Location = new System.Drawing.Point(439, 50);
+            this.nudNGon.Location = new System.Drawing.Point(223, 102);
             this.nudNGon.Name = "nudNGon";
             this.nudNGon.Size = new System.Drawing.Size(57, 22);
             this.nudNGon.TabIndex = 34;
@@ -245,7 +241,7 @@
             // rbtPolygon
             // 
             this.rbtPolygon.AutoSize = true;
-            this.rbtPolygon.Location = new System.Drawing.Point(415, 23);
+            this.rbtPolygon.Location = new System.Drawing.Point(9, 75);
             this.rbtPolygon.Name = "rbtPolygon";
             this.rbtPolygon.Size = new System.Drawing.Size(80, 21);
             this.rbtPolygon.TabIndex = 33;
@@ -256,7 +252,7 @@
             // rbtStar
             // 
             this.rbtStar.AutoSize = true;
-            this.rbtStar.Location = new System.Drawing.Point(317, 50);
+            this.rbtStar.Location = new System.Drawing.Point(9, 102);
             this.rbtStar.Name = "rbtStar";
             this.rbtStar.Size = new System.Drawing.Size(55, 21);
             this.rbtStar.TabIndex = 32;
@@ -275,12 +271,68 @@
             this.btnClear.UseVisualStyleBackColor = true;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.label8);
+            this.groupBox2.Controls.Add(this.label7);
+            this.groupBox2.Controls.Add(this.dYd);
+            this.groupBox2.Controls.Add(this.dXd);
+            this.groupBox2.Controls.Add(this.label6);
+            this.groupBox2.Location = new System.Drawing.Point(334, 14);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(632, 137);
+            this.groupBox2.TabIndex = 28;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Transformasi Objek";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(7, 22);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(54, 17);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "Dilatasi";
+            // 
+            // dXd
+            // 
+            this.dXd.Location = new System.Drawing.Point(45, 47);
+            this.dXd.Name = "dXd";
+            this.dXd.Size = new System.Drawing.Size(45, 22);
+            this.dXd.TabIndex = 1;
+            // 
+            // dYd
+            // 
+            this.dYd.Location = new System.Drawing.Point(125, 46);
+            this.dYd.Name = "dYd";
+            this.dYd.Size = new System.Drawing.Size(45, 22);
+            this.dYd.TabIndex = 2;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(16, 48);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(23, 17);
+            this.label7.TabIndex = 3;
+            this.label7.Text = "Δx";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(96, 50);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(24, 17);
+            this.label8.TabIndex = 4;
+            this.label8.Text = "Δy";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(978, 711);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.pictureBoxPaint);
@@ -300,6 +352,8 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudNGon)).EndInit();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -326,6 +380,11 @@
         private System.Windows.Forms.RadioButton rbtPolygon;
         private System.Windows.Forms.RadioButton rbtStar;
         private System.Windows.Forms.NumericUpDown nudNGon;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox dYd;
+        private System.Windows.Forms.TextBox dXd;
         private System.Windows.Forms.Label label6;
     }
 }
