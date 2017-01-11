@@ -138,7 +138,7 @@ namespace Mini_Paint
             {
                 dl.DrawBresenham(p0,p1,pen,g);
             }
-            else if(rbtCircle.Checked && clicked == true)
+           /* else if(rbtCircle.Checked && clicked == true)
             {
                 dc.DrawPembangkitanLingkaran(p0, p1, g);
             }
@@ -153,7 +153,7 @@ namespace Mini_Paint
             else if (rbtStar.Checked && clicked == true)
             {
                 dg.DrawStar(p0, p1, g, n);
-            }
+            }*/
         }
 
         private void btnTransform_Click(object sender, EventArgs e)
