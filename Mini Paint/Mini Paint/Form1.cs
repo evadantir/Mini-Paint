@@ -163,7 +163,36 @@ namespace Mini_Paint
                 dXd.Enabled = true;
                 dYd.Enabled = true;
 
-                dw.Translasi(p0, p1, g, ToInt32(dXd.Text), ToInt32(dYd.Text));
+                Point pEnd = dw.Translasi(p0, p1, g, Convert.ToInt32(dXd.Text), Convert.ToInt32(dYd.Text));
+                int n = (int)nudNGon.Value;
+                if (rbtDDA.Checked && clicked == true)
+                {
+                    dl.DrawDDA(p0, pEnd, pen, g);
+                }
+                else if (rbtNaive.Checked && clicked == true)
+                {
+                    dl.DrawNaive(p0, pEnd, pen, g);
+                }
+                else if (rbtBresenham.Checked && clicked == true)
+                {
+                    dl.DrawBresenham(p0, pEnd, pen, g);
+                }
+                else if (rbtCircle.Checked && clicked == true)
+                {
+                    dc.DrawPembangkitanLingkaran(p0, pEnd, g);
+                }
+                else if (rbtEllipse.Checked && clicked == true)
+                {
+                    dc.DrawEllipse(p0, pEnd, g);
+                }
+                else if (rbtPolygon.Checked && clicked == true)
+                {
+                    dg.DrawPolygon(p0, pEnd, g, n);
+                }
+                else if (rbtStar.Checked && clicked == true)
+                {
+                    dg.DrawStar(p0, pEnd, g, n);
+                }
             }
         }
     }
