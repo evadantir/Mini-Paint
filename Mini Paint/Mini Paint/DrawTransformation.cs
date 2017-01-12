@@ -31,7 +31,7 @@ namespace Mini_Paint
             return pTrans;
         }
 
-        public twoPoint Rotasi(Point p0, Point p1, Graphics g)
+   /*     public twoPoint Rotasi(Point p0, Point p1, Graphics g)
         {
             
         }
@@ -39,7 +39,7 @@ namespace Mini_Paint
         public twoPoint Refleksi(Point p0, Point p1, Graphics g)
         {
 
-        }
+        }*/
     }
 
 

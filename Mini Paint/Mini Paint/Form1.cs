@@ -160,10 +160,11 @@ namespace Mini_Paint
         {
             if(rbtTranslasi.Checked == true)
             {
-                //dXd.Enabled = true;
-                //dYd.Enabled = true;
+                twoPoint pHasil = new twoPoint();
+                pHasil = dw.Translasi(p0, p1,Convert.ToInt32(dXd.Text), Convert.ToInt32(dYd.Text));
+                Point pStart = new Point(pHasil.x0,pHasil.y0);
+                Point pEnd = new Point(pHasil.x1, pHasil.y1);
 
-                Point pEnd = dw.Translasi(p0, p1,Convert.ToInt32(dXd.Text), Convert.ToInt32(dYd.Text));
                 int n = (int)nudNGon.Value;
                 if (rbtDDA.Checked && clicked == true)
                 {
