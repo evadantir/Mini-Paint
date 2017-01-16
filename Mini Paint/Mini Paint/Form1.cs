@@ -163,7 +163,37 @@ namespace Mini_Paint
 
         private void rbtTranslasi_CheckedChanged(object sender, EventArgs e)
         {
-            
+            lblDxd.Visible = true;
+            lblDyd.Visible = true;
+            dXd.Visible = true;
+            dYd.Visible = true;
+        }
+
+        private void rbtDilatasi_CheckedChanged(object sender, EventArgs e)
+        {
+            lblKx.Visible = true;
+            lblKy.Visible = true;
+            txtKx.Visible = true;
+            txtKy.Visible = true;
+        }
+
+        private void rbtRotasi_CheckedChanged(object sender, EventArgs e)
+        {
+            lblSudut.Visible = true;
+            txtSudut.Visible = true;
+        }
+
+        private void btnColor_Click(object sender, EventArgs e)
+        {
+            ColorDialog dlg = new ColorDialog();
+            dlg.ShowDialog();
+
+          /*  if (dlg.ShowDialog() == DialogResult.OK)
+            {
+                string str = null;
+                str = dlg.Color.Name;
+                MessageBox.Show(str);
+            }*/
         }
 
         private void btnTransform_Click(object sender, EventArgs e)

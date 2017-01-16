@@ -66,11 +66,17 @@
             this.lblKy = new System.Windows.Forms.Label();
             this.txtSudut = new System.Windows.Forms.TextBox();
             this.lblSudut = new System.Windows.Forms.Label();
+            this.btnColor = new System.Windows.Forms.Button();
+            this.cbxCartesian = new System.Windows.Forms.CheckBox();
+            this.rbtScanLine = new System.Windows.Forms.RadioButton();
+            this.rbtBound = new System.Windows.Forms.RadioButton();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPaint)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudNGon)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -110,9 +116,9 @@
             // pictureBoxPaint
             // 
             this.pictureBoxPaint.BackColor = System.Drawing.Color.White;
-            this.pictureBoxPaint.Location = new System.Drawing.Point(12, 208);
+            this.pictureBoxPaint.Location = new System.Drawing.Point(12, 222);
             this.pictureBoxPaint.Name = "pictureBoxPaint";
-            this.pictureBoxPaint.Size = new System.Drawing.Size(951, 437);
+            this.pictureBoxPaint.Size = new System.Drawing.Size(951, 423);
             this.pictureBoxPaint.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxPaint.TabIndex = 18;
             this.pictureBoxPaint.TabStop = false;
@@ -224,7 +230,7 @@
             this.groupBox1.Controls.Add(this.rbtBresenham);
             this.groupBox1.Location = new System.Drawing.Point(12, 14);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(401, 184);
+            this.groupBox1.Size = new System.Drawing.Size(401, 175);
             this.groupBox1.TabIndex = 25;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Pembuatan Objek";
@@ -277,9 +283,9 @@
             // 
             // btnClear
             // 
-            this.btnClear.Location = new System.Drawing.Point(433, 672);
+            this.btnClear.Location = new System.Drawing.Point(423, 659);
             this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(75, 23);
+            this.btnClear.Size = new System.Drawing.Size(87, 40);
             this.btnClear.TabIndex = 27;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = true;
@@ -292,12 +298,12 @@
             this.tabControl1.Location = new System.Drawing.Point(419, 14);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(548, 188);
+            this.tabControl1.Size = new System.Drawing.Size(548, 175);
             this.tabControl1.TabIndex = 9;
             // 
             // tabPage1
             // 
-            this.tabPage1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.tabPage1.BackColor = System.Drawing.SystemColors.Control;
             this.tabPage1.Controls.Add(this.txtSudut);
             this.tabPage1.Controls.Add(this.lblSudut);
             this.tabPage1.Controls.Add(this.txtKx);
@@ -316,19 +322,23 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(540, 159);
+            this.tabPage1.Size = new System.Drawing.Size(540, 146);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Transformasi";
             // 
             // tabPage2
             // 
+            this.tabPage2.BackColor = System.Drawing.SystemColors.Control;
+            this.tabPage2.Controls.Add(this.radioButton2);
+            this.tabPage2.Controls.Add(this.rbtBound);
+            this.tabPage2.Controls.Add(this.rbtScanLine);
+            this.tabPage2.Controls.Add(this.btnColor);
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(626, 145);
+            this.tabPage2.Size = new System.Drawing.Size(540, 146);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Fill Color";
-            this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // rbtTranslasi
             // 
@@ -363,12 +373,13 @@
             this.rbtDilatasi.TabStop = true;
             this.rbtDilatasi.Text = "Dilatasi";
             this.rbtDilatasi.UseVisualStyleBackColor = true;
+            this.rbtDilatasi.CheckedChanged += new System.EventHandler(this.rbtDilatasi_CheckedChanged);
             // 
             // btnTransform
             // 
-            this.btnTransform.Location = new System.Drawing.Point(399, 50);
+            this.btnTransform.Location = new System.Drawing.Point(408, 100);
             this.btnTransform.Name = "btnTransform";
-            this.btnTransform.Size = new System.Drawing.Size(101, 23);
+            this.btnTransform.Size = new System.Drawing.Size(116, 39);
             this.btnTransform.TabIndex = 5;
             this.btnTransform.Text = "Transformasi";
             this.btnTransform.UseVisualStyleBackColor = true;
@@ -382,6 +393,7 @@
             this.lblDyd.Size = new System.Drawing.Size(24, 17);
             this.lblDyd.TabIndex = 4;
             this.lblDyd.Text = "Δy";
+            this.lblDyd.Visible = false;
             // 
             // lblDxd
             // 
@@ -391,6 +403,7 @@
             this.lblDxd.Size = new System.Drawing.Size(23, 17);
             this.lblDxd.TabIndex = 3;
             this.lblDxd.Text = "Δx";
+            this.lblDxd.Visible = false;
             // 
             // dYd
             // 
@@ -398,6 +411,7 @@
             this.dYd.Name = "dYd";
             this.dYd.Size = new System.Drawing.Size(45, 22);
             this.dYd.TabIndex = 2;
+            this.dYd.Visible = false;
             // 
             // dXd
             // 
@@ -405,6 +419,7 @@
             this.dXd.Name = "dXd";
             this.dXd.Size = new System.Drawing.Size(45, 22);
             this.dXd.TabIndex = 1;
+            this.dXd.Visible = false;
             // 
             // rbtRotasi
             // 
@@ -416,6 +431,7 @@
             this.rbtRotasi.TabStop = true;
             this.rbtRotasi.Text = "Rotasi";
             this.rbtRotasi.UseVisualStyleBackColor = true;
+            this.rbtRotasi.CheckedChanged += new System.EventHandler(this.rbtRotasi_CheckedChanged);
             // 
             // txtKx
             // 
@@ -423,6 +439,7 @@
             this.txtKx.Name = "txtKx";
             this.txtKx.Size = new System.Drawing.Size(45, 22);
             this.txtKx.TabIndex = 10;
+            this.txtKx.Visible = false;
             // 
             // txtKy
             // 
@@ -430,6 +447,7 @@
             this.txtKy.Name = "txtKy";
             this.txtKy.Size = new System.Drawing.Size(45, 22);
             this.txtKy.TabIndex = 11;
+            this.txtKy.Visible = false;
             // 
             // lblKx
             // 
@@ -439,6 +457,7 @@
             this.lblKx.Size = new System.Drawing.Size(21, 17);
             this.lblKx.TabIndex = 12;
             this.lblKx.Text = "kx";
+            this.lblKx.Visible = false;
             // 
             // lblKy
             // 
@@ -448,22 +467,78 @@
             this.lblKy.Size = new System.Drawing.Size(22, 17);
             this.lblKy.TabIndex = 13;
             this.lblKy.Text = "ky";
+            this.lblKy.Visible = false;
             // 
             // txtSudut
             // 
-            this.txtSudut.Location = new System.Drawing.Point(189, 65);
+            this.txtSudut.Location = new System.Drawing.Point(189, 66);
             this.txtSudut.Name = "txtSudut";
             this.txtSudut.Size = new System.Drawing.Size(103, 22);
             this.txtSudut.TabIndex = 14;
+            this.txtSudut.Visible = false;
             // 
             // lblSudut
             // 
             this.lblSudut.AutoSize = true;
-            this.lblSudut.Location = new System.Drawing.Point(138, 70);
+            this.lblSudut.Location = new System.Drawing.Point(138, 71);
             this.lblSudut.Name = "lblSudut";
             this.lblSudut.Size = new System.Drawing.Size(45, 17);
             this.lblSudut.TabIndex = 15;
             this.lblSudut.Text = "Sudut";
+            this.lblSudut.Visible = false;
+            // 
+            // btnColor
+            // 
+            this.btnColor.Location = new System.Drawing.Point(373, 50);
+            this.btnColor.Name = "btnColor";
+            this.btnColor.Size = new System.Drawing.Size(127, 35);
+            this.btnColor.TabIndex = 0;
+            this.btnColor.Text = "Pilih Warna";
+            this.btnColor.UseVisualStyleBackColor = true;
+            this.btnColor.Click += new System.EventHandler(this.btnColor_Click);
+            // 
+            // cbxCartesian
+            // 
+            this.cbxCartesian.AutoSize = true;
+            this.cbxCartesian.Location = new System.Drawing.Point(12, 195);
+            this.cbxCartesian.Name = "cbxCartesian";
+            this.cbxCartesian.Size = new System.Drawing.Size(159, 21);
+            this.cbxCartesian.TabIndex = 28;
+            this.cbxCartesian.Text = "Tampilkan Cartesian";
+            this.cbxCartesian.UseVisualStyleBackColor = true;
+            // 
+            // rbtScanLine
+            // 
+            this.rbtScanLine.AutoSize = true;
+            this.rbtScanLine.Location = new System.Drawing.Point(17, 23);
+            this.rbtScanLine.Name = "rbtScanLine";
+            this.rbtScanLine.Size = new System.Drawing.Size(155, 21);
+            this.rbtScanLine.TabIndex = 1;
+            this.rbtScanLine.TabStop = true;
+            this.rbtScanLine.Text = "Scan Line Algorithm";
+            this.rbtScanLine.UseVisualStyleBackColor = true;
+            // 
+            // rbtBound
+            // 
+            this.rbtBound.AutoSize = true;
+            this.rbtBound.Location = new System.Drawing.Point(17, 64);
+            this.rbtBound.Name = "rbtBound";
+            this.rbtBound.Size = new System.Drawing.Size(174, 21);
+            this.rbtBound.TabIndex = 2;
+            this.rbtBound.TabStop = true;
+            this.rbtBound.Text = "Boundary Fill Algorithm";
+            this.rbtBound.UseVisualStyleBackColor = true;
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Location = new System.Drawing.Point(17, 107);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(155, 21);
+            this.radioButton2.TabIndex = 3;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "Scan Line Algorithm";
+            this.radioButton2.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -471,6 +546,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(976, 711);
+            this.Controls.Add(this.cbxCartesian);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.groupBox1);
@@ -494,6 +570,8 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -538,6 +616,11 @@
         private System.Windows.Forms.Label lblKx;
         private System.Windows.Forms.Label lblKy;
         private System.Windows.Forms.RadioButton rbtRotasi;
+        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton rbtBound;
+        private System.Windows.Forms.RadioButton rbtScanLine;
+        private System.Windows.Forms.Button btnColor;
+        private System.Windows.Forms.CheckBox cbxCartesian;
     }
 }
 
