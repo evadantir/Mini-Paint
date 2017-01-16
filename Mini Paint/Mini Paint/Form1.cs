@@ -184,6 +184,21 @@ namespace Mini_Paint
 
         private void cbxCartesian_CheckedChanged(object sender, EventArgs e)
         {
+            double mpImage, mlImage;
+            mpImage = pictureBoxPaint.Width / 2;
+            mlImage = pictureBoxPaint.Height / 2;
+            Point pStart = Point.Empty, pEnd = Point.Empty;
+
+            //X
+            pStart = new Point(0, Convert.ToInt32(mlImage));
+            pEnd = new Point(pictureBoxPaint.Width, Convert.ToInt32(mlImage));
+            dl.DrawBresenham(pStart,pEnd, pen, g);
+            //Y
+            pStart = new Point(Convert.ToInt32(mpImage), 0);
+            pEnd = new Point(Convert.ToInt32(mpImage), pictureBoxPaint.Height);
+            dl.DrawBresenham(pStart, pEnd, pen, g);
+
+            pictureBoxPaint.Invalidate();
 
         }
 
@@ -206,11 +221,11 @@ namespace Mini_Paint
             else if(rbtDilatasi.Checked==true)
             {
                 twoPoint pHasil = new twoPoint();
-                double mpImage, mlImage;
-                mpImage = pictureBoxPaint.Width / 2;
-                mlImage = pictureBoxPaint.Height / 2;
+                // double mpImage, mlImage;
+                //mpImage = pictureBoxPaint.Width / 2;
+                //mlImage = pictureBoxPaint.Height / 2;
 
-                pHasil = dw.Dilatasi(p0, p1, Convert.ToInt32(txtKx.Text), Convert.ToInt32(txtKy.Text),mpImage,mlImage);
+                pHasil = dw.Dilatasi(p0, p1, Convert.ToInt32(txtKx.Text), Convert.ToInt32(txtKy.Text));//,mpImage,mlImage);
                 Point pStart = new Point(pHasil.x0, pHasil.y0);
                 Point pEnd = new Point(pHasil.x1, pHasil.y1);
 

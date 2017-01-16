@@ -106,7 +106,7 @@ namespace Mini_Paint
 
         public void DrawBresenham(Point p0, Point p1, Pen pen, Graphics g)
         {
-            pen = new Pen(Color.Purple);
+            pen = new Pen(Color.Black);
             //tentukan dua titik untuk membuat garis
             Point startPoint = p0;
             Point endPoint = Point.Empty;

@@ -11,13 +11,13 @@ namespace Mini_Paint
     {
         mathMethod mm = new mathMethod();
 
-        public twoPoint Dilatasi(Point p0,Point p1, int kX, int kY, double mX, double mY)
+        public twoPoint Dilatasi(Point p0, Point p1, int kX, int kY)
         {
             twoPoint pTrans = new twoPoint();
-            pTrans.x0 = Convert.ToInt32(mX + ((p0.X - mX) * kX));
-            pTrans.y0 = Convert.ToInt32(mY - ((mY - p0.Y) * kY));
-            pTrans.x1 = Convert.ToInt32(mX + ((p1.X - mX) * kX));
-            pTrans.y1 = Convert.ToInt32(mY - ((mY - p1.Y) * kY));
+            pTrans.x0 = p0.X * kX;
+            pTrans.y0 = p0.Y * kY;
+            pTrans.x1 = p1.X * kX;
+            pTrans.y1 = p1.Y * kY;
 
             return pTrans;
         }
