@@ -156,6 +156,16 @@ namespace Mini_Paint
             }*/
         }
 
+        private void rbtEllipse_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void rbtTranslasi_CheckedChanged(object sender, EventArgs e)
+        {
+            
+        }
+
         private void btnTransform_Click(object sender, EventArgs e)
         {
             if(rbtTranslasi.Checked == true)

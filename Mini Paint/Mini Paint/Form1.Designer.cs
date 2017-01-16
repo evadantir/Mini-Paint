@@ -48,19 +48,29 @@
             this.rbtPolygon = new System.Windows.Forms.RadioButton();
             this.rbtStar = new System.Windows.Forms.RadioButton();
             this.btnClear = new System.Windows.Forms.Button();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.dXd = new System.Windows.Forms.TextBox();
-            this.dYd = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.btnTransform = new System.Windows.Forms.Button();
-            this.rbtDilatasi = new System.Windows.Forms.RadioButton();
-            this.rbtRefleksi = new System.Windows.Forms.RadioButton();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.rbtTranslasi = new System.Windows.Forms.RadioButton();
+            this.rbtRefleksi = new System.Windows.Forms.RadioButton();
+            this.rbtDilatasi = new System.Windows.Forms.RadioButton();
+            this.btnTransform = new System.Windows.Forms.Button();
+            this.lblDyd = new System.Windows.Forms.Label();
+            this.lblDxd = new System.Windows.Forms.Label();
+            this.dYd = new System.Windows.Forms.TextBox();
+            this.dXd = new System.Windows.Forms.TextBox();
+            this.rbtRotasi = new System.Windows.Forms.RadioButton();
+            this.txtKx = new System.Windows.Forms.TextBox();
+            this.txtKy = new System.Windows.Forms.TextBox();
+            this.lblKx = new System.Windows.Forms.Label();
+            this.lblKy = new System.Windows.Forms.Label();
+            this.txtSudut = new System.Windows.Forms.TextBox();
+            this.lblSudut = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPaint)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudNGon)).BeginInit();
-            this.groupBox2.SuspendLayout();
+            this.tabControl1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -100,9 +110,9 @@
             // pictureBoxPaint
             // 
             this.pictureBoxPaint.BackColor = System.Drawing.Color.White;
-            this.pictureBoxPaint.Location = new System.Drawing.Point(12, 157);
+            this.pictureBoxPaint.Location = new System.Drawing.Point(12, 208);
             this.pictureBoxPaint.Name = "pictureBoxPaint";
-            this.pictureBoxPaint.Size = new System.Drawing.Size(955, 488);
+            this.pictureBoxPaint.Size = new System.Drawing.Size(951, 437);
             this.pictureBoxPaint.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxPaint.TabIndex = 18;
             this.pictureBoxPaint.TabStop = false;
@@ -148,7 +158,7 @@
             // rbtDDA
             // 
             this.rbtDDA.AutoSize = true;
-            this.rbtDDA.Location = new System.Drawing.Point(223, 21);
+            this.rbtDDA.Location = new System.Drawing.Point(12, 48);
             this.rbtDDA.Name = "rbtDDA";
             this.rbtDDA.Size = new System.Drawing.Size(58, 21);
             this.rbtDDA.TabIndex = 19;
@@ -159,7 +169,7 @@
             // rbtNaive
             // 
             this.rbtNaive.AutoSize = true;
-            this.rbtNaive.Location = new System.Drawing.Point(9, 48);
+            this.rbtNaive.Location = new System.Drawing.Point(12, 75);
             this.rbtNaive.Name = "rbtNaive";
             this.rbtNaive.Size = new System.Drawing.Size(188, 21);
             this.rbtNaive.TabIndex = 21;
@@ -181,7 +191,7 @@
             // rbtCircle
             // 
             this.rbtCircle.AutoSize = true;
-            this.rbtCircle.Location = new System.Drawing.Point(223, 48);
+            this.rbtCircle.Location = new System.Drawing.Point(311, 21);
             this.rbtCircle.Name = "rbtCircle";
             this.rbtCircle.Size = new System.Drawing.Size(64, 21);
             this.rbtCircle.TabIndex = 23;
@@ -192,13 +202,14 @@
             // rbtEllipse
             // 
             this.rbtEllipse.AutoSize = true;
-            this.rbtEllipse.Location = new System.Drawing.Point(223, 75);
+            this.rbtEllipse.Location = new System.Drawing.Point(311, 48);
             this.rbtEllipse.Name = "rbtEllipse";
             this.rbtEllipse.Size = new System.Drawing.Size(70, 21);
             this.rbtEllipse.TabIndex = 24;
             this.rbtEllipse.TabStop = true;
             this.rbtEllipse.Text = "Ellipse";
             this.rbtEllipse.UseVisualStyleBackColor = true;
+            this.rbtEllipse.CheckedChanged += new System.EventHandler(this.rbtEllipse_CheckedChanged);
             // 
             // groupBox1
             // 
@@ -213,7 +224,7 @@
             this.groupBox1.Controls.Add(this.rbtBresenham);
             this.groupBox1.Location = new System.Drawing.Point(12, 14);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(315, 137);
+            this.groupBox1.Size = new System.Drawing.Size(401, 184);
             this.groupBox1.TabIndex = 25;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Pembuatan Objek";
@@ -222,7 +233,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(168, 104);
+            this.label5.Location = new System.Drawing.Point(263, 133);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(49, 17);
             this.label5.TabIndex = 31;
@@ -230,7 +241,7 @@
             // 
             // nudNGon
             // 
-            this.nudNGon.Location = new System.Drawing.Point(223, 102);
+            this.nudNGon.Location = new System.Drawing.Point(318, 131);
             this.nudNGon.Name = "nudNGon";
             this.nudNGon.Size = new System.Drawing.Size(57, 22);
             this.nudNGon.TabIndex = 34;
@@ -244,7 +255,7 @@
             // rbtPolygon
             // 
             this.rbtPolygon.AutoSize = true;
-            this.rbtPolygon.Location = new System.Drawing.Point(9, 75);
+            this.rbtPolygon.Location = new System.Drawing.Point(9, 116);
             this.rbtPolygon.Name = "rbtPolygon";
             this.rbtPolygon.Size = new System.Drawing.Size(80, 21);
             this.rbtPolygon.TabIndex = 33;
@@ -255,7 +266,7 @@
             // rbtStar
             // 
             this.rbtStar.AutoSize = true;
-            this.rbtStar.Location = new System.Drawing.Point(9, 102);
+            this.rbtStar.Location = new System.Drawing.Point(9, 143);
             this.rbtStar.Name = "rbtStar";
             this.rbtStar.Size = new System.Drawing.Size(55, 21);
             this.rbtStar.TabIndex = 32;
@@ -274,80 +285,67 @@
             this.btnClear.UseVisualStyleBackColor = true;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
-            // groupBox2
+            // tabControl1
             // 
-            this.groupBox2.Controls.Add(this.rbtTranslasi);
-            this.groupBox2.Controls.Add(this.rbtRefleksi);
-            this.groupBox2.Controls.Add(this.rbtDilatasi);
-            this.groupBox2.Controls.Add(this.btnTransform);
-            this.groupBox2.Controls.Add(this.label8);
-            this.groupBox2.Controls.Add(this.label7);
-            this.groupBox2.Controls.Add(this.dYd);
-            this.groupBox2.Controls.Add(this.dXd);
-            this.groupBox2.Location = new System.Drawing.Point(334, 14);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(632, 137);
-            this.groupBox2.TabIndex = 28;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Transformasi Objek";
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Location = new System.Drawing.Point(419, 14);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(548, 188);
+            this.tabControl1.TabIndex = 9;
             // 
-            // dXd
+            // tabPage1
             // 
-            this.dXd.Location = new System.Drawing.Point(45, 47);
-            this.dXd.Name = "dXd";
-            this.dXd.Size = new System.Drawing.Size(45, 22);
-            this.dXd.TabIndex = 1;
+            this.tabPage1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.tabPage1.Controls.Add(this.txtSudut);
+            this.tabPage1.Controls.Add(this.lblSudut);
+            this.tabPage1.Controls.Add(this.txtKx);
+            this.tabPage1.Controls.Add(this.txtKy);
+            this.tabPage1.Controls.Add(this.lblKx);
+            this.tabPage1.Controls.Add(this.lblKy);
+            this.tabPage1.Controls.Add(this.rbtRotasi);
+            this.tabPage1.Controls.Add(this.btnTransform);
+            this.tabPage1.Controls.Add(this.rbtTranslasi);
+            this.tabPage1.Controls.Add(this.dXd);
+            this.tabPage1.Controls.Add(this.rbtRefleksi);
+            this.tabPage1.Controls.Add(this.dYd);
+            this.tabPage1.Controls.Add(this.rbtDilatasi);
+            this.tabPage1.Controls.Add(this.lblDxd);
+            this.tabPage1.Controls.Add(this.lblDyd);
+            this.tabPage1.Location = new System.Drawing.Point(4, 25);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(540, 159);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "Transformasi";
             // 
-            // dYd
+            // tabPage2
             // 
-            this.dYd.Location = new System.Drawing.Point(125, 46);
-            this.dYd.Name = "dYd";
-            this.dYd.Size = new System.Drawing.Size(45, 22);
-            this.dYd.TabIndex = 2;
+            this.tabPage2.Location = new System.Drawing.Point(4, 25);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(626, 145);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Fill Color";
+            this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // label7
+            // rbtTranslasi
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(16, 48);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(23, 17);
-            this.label7.TabIndex = 3;
-            this.label7.Text = "Δx";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(96, 50);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(24, 17);
-            this.label8.TabIndex = 4;
-            this.label8.Text = "Δy";
-            // 
-            // btnTransform
-            // 
-            this.btnTransform.Location = new System.Drawing.Point(510, 101);
-            this.btnTransform.Name = "btnTransform";
-            this.btnTransform.Size = new System.Drawing.Size(101, 23);
-            this.btnTransform.TabIndex = 5;
-            this.btnTransform.Text = "Transformasi";
-            this.btnTransform.UseVisualStyleBackColor = true;
-            this.btnTransform.Click += new System.EventHandler(this.btnTransform_Click);
-            // 
-            // rbtDilatasi
-            // 
-            this.rbtDilatasi.AutoSize = true;
-            this.rbtDilatasi.Location = new System.Drawing.Point(10, 85);
-            this.rbtDilatasi.Name = "rbtDilatasi";
-            this.rbtDilatasi.Size = new System.Drawing.Size(75, 21);
-            this.rbtDilatasi.TabIndex = 6;
-            this.rbtDilatasi.TabStop = true;
-            this.rbtDilatasi.Text = "Dilatasi";
-            this.rbtDilatasi.UseVisualStyleBackColor = true;
+            this.rbtTranslasi.AutoSize = true;
+            this.rbtTranslasi.Location = new System.Drawing.Point(18, 12);
+            this.rbtTranslasi.Name = "rbtTranslasi";
+            this.rbtTranslasi.Size = new System.Drawing.Size(87, 21);
+            this.rbtTranslasi.TabIndex = 8;
+            this.rbtTranslasi.TabStop = true;
+            this.rbtTranslasi.Text = "Translasi";
+            this.rbtTranslasi.UseVisualStyleBackColor = true;
+            this.rbtTranslasi.CheckedChanged += new System.EventHandler(this.rbtTranslasi_CheckedChanged);
             // 
             // rbtRefleksi
             // 
             this.rbtRefleksi.AutoSize = true;
-            this.rbtRefleksi.Location = new System.Drawing.Point(10, 112);
+            this.rbtRefleksi.Location = new System.Drawing.Point(18, 95);
             this.rbtRefleksi.Name = "rbtRefleksi";
             this.rbtRefleksi.Size = new System.Drawing.Size(79, 21);
             this.rbtRefleksi.TabIndex = 7;
@@ -355,24 +353,125 @@
             this.rbtRefleksi.Text = "Refleksi";
             this.rbtRefleksi.UseVisualStyleBackColor = true;
             // 
-            // rbtTranslasi
+            // rbtDilatasi
             // 
-            this.rbtTranslasi.AutoSize = true;
-            this.rbtTranslasi.Location = new System.Drawing.Point(11, 20);
-            this.rbtTranslasi.Name = "rbtTranslasi";
-            this.rbtTranslasi.Size = new System.Drawing.Size(87, 21);
-            this.rbtTranslasi.TabIndex = 8;
-            this.rbtTranslasi.TabStop = true;
-            this.rbtTranslasi.Text = "Translasi";
-            this.rbtTranslasi.UseVisualStyleBackColor = true;
+            this.rbtDilatasi.AutoSize = true;
+            this.rbtDilatasi.Location = new System.Drawing.Point(18, 41);
+            this.rbtDilatasi.Name = "rbtDilatasi";
+            this.rbtDilatasi.Size = new System.Drawing.Size(75, 21);
+            this.rbtDilatasi.TabIndex = 6;
+            this.rbtDilatasi.TabStop = true;
+            this.rbtDilatasi.Text = "Dilatasi";
+            this.rbtDilatasi.UseVisualStyleBackColor = true;
+            // 
+            // btnTransform
+            // 
+            this.btnTransform.Location = new System.Drawing.Point(399, 50);
+            this.btnTransform.Name = "btnTransform";
+            this.btnTransform.Size = new System.Drawing.Size(101, 23);
+            this.btnTransform.TabIndex = 5;
+            this.btnTransform.Text = "Transformasi";
+            this.btnTransform.UseVisualStyleBackColor = true;
+            this.btnTransform.Click += new System.EventHandler(this.btnTransform_Click);
+            // 
+            // lblDyd
+            // 
+            this.lblDyd.AutoSize = true;
+            this.lblDyd.Location = new System.Drawing.Point(218, 16);
+            this.lblDyd.Name = "lblDyd";
+            this.lblDyd.Size = new System.Drawing.Size(24, 17);
+            this.lblDyd.TabIndex = 4;
+            this.lblDyd.Text = "Δy";
+            // 
+            // lblDxd
+            // 
+            this.lblDxd.AutoSize = true;
+            this.lblDxd.Location = new System.Drawing.Point(138, 14);
+            this.lblDxd.Name = "lblDxd";
+            this.lblDxd.Size = new System.Drawing.Size(23, 17);
+            this.lblDxd.TabIndex = 3;
+            this.lblDxd.Text = "Δx";
+            // 
+            // dYd
+            // 
+            this.dYd.Location = new System.Drawing.Point(247, 12);
+            this.dYd.Name = "dYd";
+            this.dYd.Size = new System.Drawing.Size(45, 22);
+            this.dYd.TabIndex = 2;
+            // 
+            // dXd
+            // 
+            this.dXd.Location = new System.Drawing.Point(167, 13);
+            this.dXd.Name = "dXd";
+            this.dXd.Size = new System.Drawing.Size(45, 22);
+            this.dXd.TabIndex = 1;
+            // 
+            // rbtRotasi
+            // 
+            this.rbtRotasi.AutoSize = true;
+            this.rbtRotasi.Location = new System.Drawing.Point(18, 68);
+            this.rbtRotasi.Name = "rbtRotasi";
+            this.rbtRotasi.Size = new System.Drawing.Size(69, 21);
+            this.rbtRotasi.TabIndex = 9;
+            this.rbtRotasi.TabStop = true;
+            this.rbtRotasi.Text = "Rotasi";
+            this.rbtRotasi.UseVisualStyleBackColor = true;
+            // 
+            // txtKx
+            // 
+            this.txtKx.Location = new System.Drawing.Point(167, 41);
+            this.txtKx.Name = "txtKx";
+            this.txtKx.Size = new System.Drawing.Size(45, 22);
+            this.txtKx.TabIndex = 10;
+            // 
+            // txtKy
+            // 
+            this.txtKy.Location = new System.Drawing.Point(247, 40);
+            this.txtKy.Name = "txtKy";
+            this.txtKy.Size = new System.Drawing.Size(45, 22);
+            this.txtKy.TabIndex = 11;
+            // 
+            // lblKx
+            // 
+            this.lblKx.AutoSize = true;
+            this.lblKx.Location = new System.Drawing.Point(138, 42);
+            this.lblKx.Name = "lblKx";
+            this.lblKx.Size = new System.Drawing.Size(21, 17);
+            this.lblKx.TabIndex = 12;
+            this.lblKx.Text = "kx";
+            // 
+            // lblKy
+            // 
+            this.lblKy.AutoSize = true;
+            this.lblKy.Location = new System.Drawing.Point(218, 44);
+            this.lblKy.Name = "lblKy";
+            this.lblKy.Size = new System.Drawing.Size(22, 17);
+            this.lblKy.TabIndex = 13;
+            this.lblKy.Text = "ky";
+            // 
+            // txtSudut
+            // 
+            this.txtSudut.Location = new System.Drawing.Point(189, 65);
+            this.txtSudut.Name = "txtSudut";
+            this.txtSudut.Size = new System.Drawing.Size(103, 22);
+            this.txtSudut.TabIndex = 14;
+            // 
+            // lblSudut
+            // 
+            this.lblSudut.AutoSize = true;
+            this.lblSudut.Location = new System.Drawing.Point(138, 70);
+            this.lblSudut.Name = "lblSudut";
+            this.lblSudut.Size = new System.Drawing.Size(45, 17);
+            this.lblSudut.TabIndex = 15;
+            this.lblSudut.Text = "Sudut";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(978, 711);
-            this.Controls.Add(this.groupBox2);
+            this.ClientSize = new System.Drawing.Size(976, 711);
+            this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.pictureBoxPaint);
@@ -392,8 +491,9 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudNGon)).EndInit();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
+            this.tabControl1.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -420,15 +520,24 @@
         private System.Windows.Forms.RadioButton rbtPolygon;
         private System.Windows.Forms.RadioButton rbtStar;
         private System.Windows.Forms.NumericUpDown nudNGon;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label lblDyd;
+        private System.Windows.Forms.Label lblDxd;
         private System.Windows.Forms.TextBox dYd;
         private System.Windows.Forms.TextBox dXd;
         private System.Windows.Forms.Button btnTransform;
         private System.Windows.Forms.RadioButton rbtRefleksi;
         private System.Windows.Forms.RadioButton rbtDilatasi;
         private System.Windows.Forms.RadioButton rbtTranslasi;
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.TextBox txtSudut;
+        private System.Windows.Forms.Label lblSudut;
+        private System.Windows.Forms.TextBox txtKx;
+        private System.Windows.Forms.TextBox txtKy;
+        private System.Windows.Forms.Label lblKx;
+        private System.Windows.Forms.Label lblKy;
+        private System.Windows.Forms.RadioButton rbtRotasi;
     }
 }
 
