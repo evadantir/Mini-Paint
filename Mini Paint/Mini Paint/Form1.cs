@@ -1,12 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using Mini_Paint.Canvas;
 
 namespace Mini_Paint
 {
@@ -19,8 +17,9 @@ namespace Mini_Paint
         DrawTransformation dw = new DrawTransformation();
 
         private Point p0, p1;
-        private Bitmap drawArea;
+        private Bitmap drawArea;//, gridArea;
         private Graphics g;
+        //private Grid grid;
         private Pen pen = new Pen(Color.Black);
 
         bool clicked = false;
@@ -64,7 +63,7 @@ namespace Mini_Paint
             clicked = true;
             p1 = e.Location;  //titik akhir
             //g.Clear(Color.White);
-            Draw();
+            DrawObject();
             x1.Text = Convert.ToString(e.Location.X);
             y1.Text = Convert.ToString(e.Location.Y);
             pictureBoxPaint.Invalidate();
@@ -123,7 +122,7 @@ namespace Mini_Paint
 
         }
 
-        private void Draw()
+        private void DrawObject()
         {
             int n = (int)nudNGon.Value;
             if (rbtDDA.Checked && clicked == true && clicked == true)
@@ -138,7 +137,7 @@ namespace Mini_Paint
             {
                 dl.DrawBresenham(p0,p1,pen,g);
             }
-           /* else if(rbtCircle.Checked && clicked == true)
+            else if(rbtCircle.Checked && clicked == true)
             {
                 dc.DrawPembangkitanLingkaran(p0, p1, g);
             }
@@ -153,7 +152,7 @@ namespace Mini_Paint
             else if (rbtStar.Checked && clicked == true)
             {
                 dg.DrawStar(p0, p1, g, n);
-            }*/
+            }
         }
 
         private void rbtEllipse_CheckedChanged(object sender, EventArgs e)
@@ -196,45 +195,80 @@ namespace Mini_Paint
             }*/
         }
 
+        private void cbxCartesian_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void DrawTransform(Point pStart, Point pEnd)
+        {
+            int n = (int)nudNGon.Value;
+            if (rbtDDA.Checked && clicked == true && clicked == true)
+            {
+                dl.DrawDDA(pStart, pEnd, pen, g);
+            }
+            else if (rbtNaive.Checked && clicked == true)
+            {
+                dl.DrawNaive(pStart, pEnd, pen, g);
+            }
+            else if (rbtBresenham.Checked && clicked == true)
+            {
+                dl.DrawBresenham(pStart, pEnd, pen, g);
+            }
+            else if (rbtCircle.Checked && clicked == true)
+            {
+                dc.DrawPembangkitanLingkaran(pStart, pEnd, g);
+            }
+            else if (rbtEllipse.Checked && clicked == true)
+            {
+                dc.DrawEllipse(pStart, pEnd, g);
+            }
+            else if (rbtPolygon.Checked && clicked == true)
+            {
+                dg.DrawPolygon(pStart, pEnd, g, n);
+            }
+            else if (rbtStar.Checked && clicked == true)
+            {
+                dg.DrawStar(pStart, pEnd, g, n);
+            }
+        }
+
         private void btnTransform_Click(object sender, EventArgs e)
         {
-            if(rbtTranslasi.Checked == true)
+            clicked = true;
+            if (rbtTranslasi.Checked == true)
             {
                 twoPoint pHasil = new twoPoint();
                 pHasil = dw.Translasi(p0, p1,Convert.ToInt32(dXd.Text), Convert.ToInt32(dYd.Text));
                 Point pStart = new Point(pHasil.x0,pHasil.y0);
                 Point pEnd = new Point(pHasil.x1, pHasil.y1);
 
-                int n = (int)nudNGon.Value;
-                if (rbtDDA.Checked && clicked == true)
-                {
-                    dl.DrawDDA(p0, pEnd, pen, g);
-                }
-                else if (rbtNaive.Checked && clicked == true)
-                {
-                    dl.DrawNaive(p0, pEnd, pen, g);
-                }
-                else if (rbtBresenham.Checked && clicked == true)
-                {
-                    dl.DrawBresenham(p0, pEnd, pen, g);
-                }
-                else if (rbtCircle.Checked && clicked == true)
-                {
-                    dc.DrawPembangkitanLingkaran(p0, pEnd, g);
-                }
-                else if (rbtEllipse.Checked && clicked == true)
-                {
-                    dc.DrawEllipse(p0, pEnd, g);
-                }
-                else if (rbtPolygon.Checked && clicked == true)
-                {
-                    dg.DrawPolygon(p0, pEnd, g, n);
-                }
-                else if (rbtStar.Checked && clicked == true)
-                {
-                    dg.DrawStar(p0, pEnd, g, n);
-                }
+                DrawTransform(pStart, pEnd);
             }
+            else if(rbtDilatasi.Checked==true)
+            {
+                twoPoint pHasil = new twoPoint();
+                pHasil = dw.Dilatasi(p0, p1, Convert.ToInt32(txtKx.Text), Convert.ToInt32(txtKy.Text));
+                Point pStart = new Point(pHasil.x0, pHasil.y0);
+                Point pEnd = new Point(pHasil.x1, pHasil.y1);
+
+                DrawTransform(pStart, pEnd);
+            }
+            else if (rbtRotasi.Checked == true)
+            {
+                twoPoint pHasil = new twoPoint();
+                pHasil = dw.Rotasi(p0, p1, Convert.ToDouble(txtSudut.Text));
+                Point pStart = new Point(pHasil.x0, pHasil.y0);
+                Point pEnd = new Point(pHasil.x1, pHasil.y1);
+
+                DrawTransform(pStart, pEnd);
+            }
+            else if (rbtRefleksi.Checked == true)
+            {
+                twoPoint pHasil = new twoPoint();
+            }
+
+
         }
     }
 }

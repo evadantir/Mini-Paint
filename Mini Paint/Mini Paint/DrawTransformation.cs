@@ -31,15 +31,22 @@ namespace Mini_Paint
             return pTrans;
         }
 
-   /*     public twoPoint Rotasi(Point p0, Point p1, Graphics g)
+        public twoPoint Rotasi(Point p0, Point p1, double sudut)
         {
-            
+            //code by Tria Yuda P
+            twoPoint pTrans = new twoPoint();
+            pTrans.x0 = Convert.ToInt32((p0.X * (Math.Cos(sudut / 360 * 2 * Math.PI))) + (p0.Y * (Math.Sin(sudut / 360 * 2 * Math.PI)) * -1));
+            pTrans.x1 = Convert.ToInt32((p1.X * (Math.Cos(sudut / 360 * 2 * Math.PI))) + (p1.Y * (Math.Sin(sudut / 360 * 2 * Math.PI)) * -1));
+            pTrans.y0 = Convert.ToInt32((p0.X * (Math.Sin(sudut / 360 * 2 * Math.PI))) + (p0.Y * (Math.Cos(sudut / 360 * 2 * Math.PI))));
+            pTrans.y1 = Convert.ToInt32((p1.X * (Math.Sin(sudut / 360 * 2 * Math.PI))) + (p1.Y * (Math.Cos(sudut / 360 * 2 * Math.PI))));
+            return pTrans;
         }
 
-        public twoPoint Refleksi(Point p0, Point p1, Graphics g)
+        public twoPoint Refleksi(Point p0, Point p1, int sudut)
         {
-
-        }*/
+            twoPoint pTrans = new twoPoint();
+            return pTrans;
+        }
     }
 
 

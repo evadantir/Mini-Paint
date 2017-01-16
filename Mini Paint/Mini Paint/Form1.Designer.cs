@@ -355,7 +355,7 @@
             // rbtRefleksi
             // 
             this.rbtRefleksi.AutoSize = true;
-            this.rbtRefleksi.Location = new System.Drawing.Point(18, 95);
+            this.rbtRefleksi.Location = new System.Drawing.Point(18, 104);
             this.rbtRefleksi.Name = "rbtRefleksi";
             this.rbtRefleksi.Size = new System.Drawing.Size(79, 21);
             this.rbtRefleksi.TabIndex = 7;
@@ -366,7 +366,7 @@
             // rbtDilatasi
             // 
             this.rbtDilatasi.AutoSize = true;
-            this.rbtDilatasi.Location = new System.Drawing.Point(18, 41);
+            this.rbtDilatasi.Location = new System.Drawing.Point(18, 43);
             this.rbtDilatasi.Name = "rbtDilatasi";
             this.rbtDilatasi.Size = new System.Drawing.Size(75, 21);
             this.rbtDilatasi.TabIndex = 6;
@@ -424,7 +424,7 @@
             // rbtRotasi
             // 
             this.rbtRotasi.AutoSize = true;
-            this.rbtRotasi.Location = new System.Drawing.Point(18, 68);
+            this.rbtRotasi.Location = new System.Drawing.Point(18, 74);
             this.rbtRotasi.Name = "rbtRotasi";
             this.rbtRotasi.Size = new System.Drawing.Size(69, 21);
             this.rbtRotasi.TabIndex = 9;
@@ -435,7 +435,7 @@
             // 
             // txtKx
             // 
-            this.txtKx.Location = new System.Drawing.Point(167, 41);
+            this.txtKx.Location = new System.Drawing.Point(167, 43);
             this.txtKx.Name = "txtKx";
             this.txtKx.Size = new System.Drawing.Size(45, 22);
             this.txtKx.TabIndex = 10;
@@ -443,7 +443,7 @@
             // 
             // txtKy
             // 
-            this.txtKy.Location = new System.Drawing.Point(247, 40);
+            this.txtKy.Location = new System.Drawing.Point(247, 42);
             this.txtKy.Name = "txtKy";
             this.txtKy.Size = new System.Drawing.Size(45, 22);
             this.txtKy.TabIndex = 11;
@@ -452,7 +452,7 @@
             // lblKx
             // 
             this.lblKx.AutoSize = true;
-            this.lblKx.Location = new System.Drawing.Point(138, 42);
+            this.lblKx.Location = new System.Drawing.Point(138, 44);
             this.lblKx.Name = "lblKx";
             this.lblKx.Size = new System.Drawing.Size(21, 17);
             this.lblKx.TabIndex = 12;
@@ -462,7 +462,7 @@
             // lblKy
             // 
             this.lblKy.AutoSize = true;
-            this.lblKy.Location = new System.Drawing.Point(218, 44);
+            this.lblKy.Location = new System.Drawing.Point(218, 46);
             this.lblKy.Name = "lblKy";
             this.lblKy.Size = new System.Drawing.Size(22, 17);
             this.lblKy.TabIndex = 13;
@@ -471,7 +471,7 @@
             // 
             // txtSudut
             // 
-            this.txtSudut.Location = new System.Drawing.Point(189, 66);
+            this.txtSudut.Location = new System.Drawing.Point(189, 72);
             this.txtSudut.Name = "txtSudut";
             this.txtSudut.Size = new System.Drawing.Size(103, 22);
             this.txtSudut.TabIndex = 14;
@@ -480,7 +480,7 @@
             // lblSudut
             // 
             this.lblSudut.AutoSize = true;
-            this.lblSudut.Location = new System.Drawing.Point(138, 71);
+            this.lblSudut.Location = new System.Drawing.Point(138, 77);
             this.lblSudut.Name = "lblSudut";
             this.lblSudut.Size = new System.Drawing.Size(45, 17);
             this.lblSudut.TabIndex = 15;
@@ -506,6 +506,7 @@
             this.cbxCartesian.TabIndex = 28;
             this.cbxCartesian.Text = "Tampilkan Cartesian";
             this.cbxCartesian.UseVisualStyleBackColor = true;
+            this.cbxCartesian.CheckedChanged += new System.EventHandler(this.cbxCartesian_CheckedChanged);
             // 
             // rbtScanLine
             // 
