@@ -15,7 +15,7 @@ namespace Mini_Paint
         {
             twoPoint pTrans = new twoPoint();
             pTrans.x0 = p0.X * kX;
-            pTrans.y0 = p0.Y * kY;
+            pTrans.y0 = p0.Y * kY; 
             pTrans.x1 = p1.X * kX;
             pTrans.y1 = p1.Y * kY;
 

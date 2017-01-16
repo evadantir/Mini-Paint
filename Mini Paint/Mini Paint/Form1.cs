@@ -221,11 +221,8 @@ namespace Mini_Paint
             else if(rbtDilatasi.Checked==true)
             {
                 twoPoint pHasil = new twoPoint();
-                // double mpImage, mlImage;
-                //mpImage = pictureBoxPaint.Width / 2;
-                //mlImage = pictureBoxPaint.Height / 2;
 
-                pHasil = dw.Dilatasi(p0, p1, Convert.ToInt32(txtKx.Text), Convert.ToInt32(txtKy.Text));//,mpImage,mlImage);
+                pHasil = dw.Dilatasi(p0, p1, Convert.ToInt32(txtKx.Text), Convert.ToInt32(txtKy.Text)); 
                 Point pStart = new Point(pHasil.x0, pHasil.y0);
                 Point pEnd = new Point(pHasil.x1, pHasil.y1);
 
