@@ -187,6 +187,11 @@ namespace Mini_Paint
 
         }
 
+        private void rbtRefleksi_CheckedChanged(object sender, EventArgs e)
+        {
+            gbxSumbuRefleksi.Visible = true;
+        }
+
         private void btnTransform_Click(object sender, EventArgs e)
         {
             if (rbtTranslasi.Checked == true)
@@ -201,7 +206,11 @@ namespace Mini_Paint
             else if(rbtDilatasi.Checked==true)
             {
                 twoPoint pHasil = new twoPoint();
-                pHasil = dw.Dilatasi(p0, p1, Convert.ToInt32(txtKx.Text), Convert.ToInt32(txtKy.Text));
+                double mpImage, mlImage;
+                mpImage = pictureBoxPaint.Width / 2;
+                mlImage = pictureBoxPaint.Height / 2;
+
+                pHasil = dw.Dilatasi(p0, p1, Convert.ToInt32(txtKx.Text), Convert.ToInt32(txtKy.Text),mpImage,mlImage);
                 Point pStart = new Point(pHasil.x0, pHasil.y0);
                 Point pEnd = new Point(pHasil.x1, pHasil.y1);
 
@@ -210,16 +219,49 @@ namespace Mini_Paint
             else if (rbtRotasi.Checked == true)
             {
                 twoPoint pHasil = new twoPoint();
+
+                double mpImage, mlImage;
+                mpImage = pictureBoxPaint.Width / 2;
+                mlImage = pictureBoxPaint.Height / 2;
+
+                Point pStart = Point.Empty, pEnd = Point.Empty;
+                pStart.X = p0.X - Convert.ToInt32(mpImage);
+                pStart.Y = Convert.ToInt32(mlImage) - p0.Y;
+                pEnd.X = p1.X - Convert.ToInt32(mpImage);
+                pEnd.Y = Convert.ToInt32(mlImage) - p1.Y;
+
                 pHasil = dw.Rotasi(p0, p1, Convert.ToDouble(txtSudut.Text));
+
+                pHasil.x0 = pHasil.x0 + Convert.ToInt32(mpImage);
+                pHasil.y0 = pHasil.y0 - Convert.ToInt32(mlImage);
+                pHasil.x1 = pHasil.x1 + Convert.ToInt32(mpImage);
+                pHasil.y1 = pHasil.y1 - Convert.ToInt32(mlImage);
+                DrawObject(pStart, pEnd);
+            }
+             else if (rbtRefleksi.Checked == true)
+             {
+                double k1, k2;
+                int sumbu=0;
+                if(rbtReflekX.Checked==true)
+                {
+                    k1 = (pictureBoxPaint.Height / 2) - p0.Y;
+                    k2 = (pictureBoxPaint.Height / 2) - p1.Y;
+                }
+                else
+                {
+                    sumbu = 1;
+                    k1 = (pictureBoxPaint.Width / 2) - p0.X;
+                    k2 = (pictureBoxPaint.Width / 2) - p0.Y;
+                }
+
+                twoPoint pHasil = new twoPoint();
+                pHasil = dw.Refleksi(p0, p1,sumbu,k1,k2);
                 Point pStart = new Point(pHasil.x0, pHasil.y0);
                 Point pEnd = new Point(pHasil.x1, pHasil.y1);
 
                 DrawObject(pStart, pEnd);
             }
-             else if (rbtRefleksi.Checked == true)
-             {
-                 twoPoint pHasil = new twoPoint();
-             }
+
             pictureBoxPaint.Invalidate();
         }
     }
